@@ -174,7 +174,7 @@ class _UtilityAppItemState extends State<UtilityAppItem> {
                 _showAppNotFoundDialog();
               }
             } else {
-              // Local executable file - Cek dulu apakah file ada
+              // Local executable file
               final file = File(path);
               if (!await file.exists()) {
                 if (!context.mounted) return;

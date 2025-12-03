@@ -80,7 +80,6 @@ class _AppEditorDialogState extends State<AppEditorDialog> {
       }
     }
     
-    // Pastikan selectedGroup valid, jika tidak set ke item pertama
     if (_dropdownItems.isNotEmpty) {
       final validValues = _dropdownItems.map((item) => item.value).toSet();
       if (!validValues.contains(_selectedGroup)) {
@@ -122,12 +121,10 @@ class _AppEditorDialogState extends State<AppEditorDialog> {
 
   void _save() {
     if (_formKey.currentState!.validate()) {
-      // Tentukan warna border berdasarkan apakah main atau utility
       Color borderColor;
       if (_selectedGroup.endsWith('_main')) {
         borderColor = Colors.red.shade700;
       } else {
-        // Ambil warna dari category untuk utility apps
         final categoryId = int.tryParse(_selectedGroup.split('_')[0]);
         final category = _categories.firstWhere(
           (cat) => cat.id == categoryId,

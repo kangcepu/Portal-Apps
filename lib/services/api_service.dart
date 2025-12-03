@@ -157,5 +157,4 @@ class ApiService {
   }
 }
 
-// Instance global
 final apiService = ApiService();

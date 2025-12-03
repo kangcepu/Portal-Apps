@@ -11,7 +11,6 @@ Future<String?> getUniquePcId() async {
   final shell = Shell();
   String? finalId;
 
-  // --- Cara 1: Coba Ambil Serial Number Motherboard (Pilihan Terbaik) ---
   try {
     var result = await shell.run('wmic baseboard get serialnumber');
     var serialNumber = result.first.stdout.toString().split('\n')[1].trim();

@@ -41,22 +41,18 @@ class _KeywordPageState extends State<KeywordPage> {
     String input = _controller.text.trim().toLowerCase();
     final settings = widget.data['settings'];
     
-    // RESERVED SYSTEM PAGES (prioritas tertinggi)
     if (input == settings['admin_keyword']) {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AdminLoginPage(password: settings['admin_password'])));
     } else if (input == settings['help_keyword']) {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HelpPage(imagePath: settings['help_image_path'])));
     } else {
-      // Cek dynamic categories
       final foundCategory = _categories.where((cat) => cat.keyword.toLowerCase() == input).toList();
       
       if (foundCategory.isNotEmpty) {
-        // Route ke dynamic category page
         Navigator.pushReplacement(context, MaterialPageRoute(
           builder: (context) => DynamicCategoryPage(category: foundCategory.first)
         ));
       } else {
-        // Cek dynamic apps dari database
         final apps = widget.data['applications'] as List;
         final foundApp = apps.where((app) => 
           app['name'].toString().toLowerCase() == input ||
@@ -64,7 +60,6 @@ class _KeywordPageState extends State<KeywordPage> {
         ).toList();
         
         if (foundApp.isNotEmpty) {
-          // Route ke dynamic app page dengan data app
           Navigator.pushReplacement(context, MaterialPageRoute(
             builder: (context) => DynamicAppPage(appData: AppModel.fromJson(foundApp.first))
           ));

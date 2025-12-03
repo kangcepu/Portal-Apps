@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   window_manager: ^0.5.1
-  #shared_preferences: ^2.2.3
+  
   file_picker: ^8.0.5
   
   cupertino_icons: ^1.0.8
@@ -22,7 +22,7 @@ dependencies:
   version: ^3.0.2
   uuid: ^4.4.0
   win32: ^5.5.0
-  process_run: ^0.12.0 # Versi terbaru saat ini
+  process_run: ^0.12.0 
   dio: ^5.4.3+1
   path_provider: ^2.1.3
   archive: ^3.5.1
@@ -35,7 +35,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # --- ALAT BARU UNTUK MEMASANG IKON ---
+  
   flutter_launcher_icons: ^0.13.1
 
   flutter_lints: ^4.0.0
@@ -46,16 +46,16 @@ flutter:
     - assets/icons/
     - assets/bg/
 
-# --- KONFIGURASI IKON APLIKASI ---
+
 flutter_launcher_icons:
   windows:
     generate: true
-    # Arahkan ke lokasi file ikonmu
+    
     image_path: "assets/icons/icon.png"
-    # Ukuran ikon untuk file .exe
+    
     icon_size: 256 
 
-  # Kita nonaktifkan untuk platform lain
+  
   android: false
   ios: false
   web:

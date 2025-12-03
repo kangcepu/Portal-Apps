@@ -1,6 +1,19 @@
 # ups
 
-A new Flutter project.
+Utama Portal System.
+
+
+## Future
+Management Apps, Management Secret, Management Tools Helping Image.
+
+Buat portal aplikasi sendiri berbasis Desktop untuk memudahkan user untuk membuka Apps sehingga desktop lebih clean.
+Support untuk Windows, Linux/Distro
+
+Flutter MultiPlatform, Just Debug For Your System Operation System and Enjooy!
+
+
+Baca Dokumen, gausah malas.
+
 
 ## Getting Started
 

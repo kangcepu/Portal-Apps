@@ -71,7 +71,6 @@ class _InitialPageState extends State<InitialPage> {
     });
 
     try {
-      // Download ke temp folder
       final tempDir = await getTemporaryDirectory();
       final fileName = downloadUrl.split('/').last;
       final savePath = '${tempDir.path}\\$fileName';
@@ -95,16 +94,10 @@ class _InitialPageState extends State<InitialPage> {
 
       await Future.delayed(const Duration(seconds: 2));
 
-      // Run installer dengan admin rights menggunakan runas
-      // /VERYSILENT = install tanpa UI
-      // /CLOSEAPPLICATIONS = tutup app yang sedang jalan
-      // /RESTARTAPPLICATIONS = restart app setelah install
       await Shell().run('powershell -Command "Start-Process \\"$savePath\\" -ArgumentList \\"/VERYSILENT /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS\\" -Verb RunAs"');
       
-      // Tunggu sebentar biar installer jalan
       await Future.delayed(const Duration(seconds: 1));
       
-      // Tutup aplikasi
       exit(0);
 
     } catch (e) {

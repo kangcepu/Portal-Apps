@@ -8,7 +8,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await windowManager.ensureInitialized();
   
-  // Laporkan instalasi ke server
   await reportInstallationToServer();
 
   WindowOptions windowOptions = const WindowOptions(

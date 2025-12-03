@@ -104,7 +104,7 @@ void _showAppNotFoundDialog() {
                 Icon(Icons.phone_in_talk, color: Colors.blue.shade700, size: 28),
                 const SizedBox(height: 8),
                 Text(
-                  'Hubungi Tim IS',
+                  'Hubungi IT',
                   style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w600,
@@ -113,7 +113,7 @@ void _showAppNotFoundDialog() {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Ext. 363 / 365 / 366',
+                  'Ext. 000',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -174,7 +174,7 @@ void _showAppNotFoundDialog() {
                 _showAppNotFoundDialog();
               }
             } else {
-              // Local executable file - Cek dulu apakah file ada
+              // Local executable file
               final file = File(path);
               if (!await file.exists()) {
                 if (!context.mounted) return;
