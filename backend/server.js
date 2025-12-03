@@ -43,10 +43,10 @@ const uploadHelpImage = multer({ storage: createMulterStorage(helpImageDir) });
 
 const pool = mysql.createPool({
   connectionLimit: 10, 
-  host: '192.168.10.100', 
-  user: 'upm',
-  password: 'G4asaru123!',
-  database: 'portal_db'
+  host: 'localhost', 
+  user: 'root',
+  password: '',
+  database: 'portal'
 });
 
 pool.getConnection((err, connection) => {
